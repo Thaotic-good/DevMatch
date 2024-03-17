@@ -18,12 +18,8 @@ function TechSelector() {
     const [devType, setDevType] = useState('')
     const [technologies, setTechnologies] = useState([])
 
-    const frontendTech = ['HTML', 'CSS', 'JavaScript', 'React', 'Angular', 'Vue.js'];
-    const backendTech = ['Node.js', 'Express', 'Django', 'Flask', 'Ruby on Rails', 'Spring Boot'];
-
     const renderTechnologies = () => {
-        let techList = devType === 'frontend' ? frontendTech : backendTech
-
+        // let techList = devType === 'frontend' ? frontendTech : backendTech
         if (devType) {
             return (
                 <>
@@ -35,20 +31,21 @@ function TechSelector() {
                 </>
             )
         }
-
-        const handleTechTick = ()=> {
-            setTechnologies(...prevTechnologies= prevTechnologies + tech)
-        }
-        return (
-            <>
-                <input name="frontend" type="radio" value="frontend" checked={devType === 'frontend'}
-                       onClick={renderTechnologies}>
-                    I'm a front-end dev
-                </input>
-                <input name="backend" onClick={renderTechnologies}>I'm a back-end dev</input>
-            </>
-
-        )
     }
+
+    const handleTechTick = () => {
+        setTechnologies([...prevTechnologies => prevTechnologies + tech])
+    }
+
+    return (
+        <>
+            <input name="frontend" type="radio" checked={devType === 'frontend'} onClick={renderTechnologies}/>
+            I'm a front-end dev
+            <input name="backend" type="radio" checked={devType === 'backend'} onClick={renderTechnologies}/>
+            I'm a back-end dev
+            <input name="fullstack" type="radio" checked={devType === 'fullstack'} onClick={renderTechnologies}/>
+            I'm a full-stack dev
+        </>
+    )
 }
-    export default TechSelector
+export default TechSelector
