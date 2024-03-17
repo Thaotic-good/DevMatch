@@ -32,7 +32,6 @@ function TechSelector() {
             )
         }
     }
-
     const handleTechTick = () => {
         setTechnologies([...prevTechnologies => prevTechnologies + tech])
     }
