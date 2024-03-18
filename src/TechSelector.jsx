@@ -24,27 +24,35 @@ function TechSelector() {
             return (
                 <>
                     <h3>Select technologies:</h3>
-                    <ul>
-                        {techList.map((tech, index) => (
-                            <li key={index}><input type="checkbox" onChange={handleTechTick}>{tech}</input></li>))}
-                    </ul>
+                    {/*<ul>*/}
+                    {/*    {techList.map((tech, index) => (*/}
+                    {/*        <li key={index}><input type="checkbox" onChange={handleTechTick}>{tech}</input></li>))}*/}
+                    {/*</ul>*/}
                 </>
             )
         }
     }
-    const handleTechTick = () => {
-        setTechnologies([...prevTechnologies => prevTechnologies + tech])
-    }
+    // const handleTechTick = () => {
+    //     setTechnologies([...prevTechnologies => prevTechnologies + tech])
+    // }
 
     return (
         <>
-            <input name="frontend" type="radio" checked={devType === 'frontend'} onClick={renderTechnologies}/>
+            <input className="mt-2 text-gray-600" name="frontend" type="radio" checked={devType === 'frontend'}
+                   onClick={renderTechnologies}/>
             I'm a front-end dev
             <input name="backend" type="radio" checked={devType === 'backend'} onClick={renderTechnologies}/>
             I'm a back-end dev
             <input name="fullstack" type="radio" checked={devType === 'fullstack'} onClick={renderTechnologies}/>
             I'm a full-stack dev
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Button
+            </button>
+            <div className="bg-blue-500 text-red p-4">
+                This is an example using Tailwind CSS classes.
+            </div>
         </>
     )
 }
+
 export default TechSelector
