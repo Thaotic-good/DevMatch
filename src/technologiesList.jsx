@@ -1,3 +1,6 @@
+import React from "react";
+import {useButtonsChoice} from "./ButtonsChoiceContext";
+
 const techs = [
     {id: 1, name: "Node.js", category: "runtime", type: ["backend"]},
     {id: 2, name: "Express", category: "framework", type: ["backend"]},
@@ -23,18 +26,38 @@ const techs = [
 ]
 
 function TechnologiesList() {
-    const frontendTechsList = frontendTechs.map((tech) =>
-        <li key={tech.id}>{tech.name}</li>
+    const {choice} = useButtonsChoice()
+    const frontendTechs = techs.filter(tech => tech.type.includes("frontend"))
+    /*now that I have a list of objects that includes the value "frontend" I want to create a list of values from a key "name"
+    * but it's a list of objects not an object to access right away*/
+    console.log(choice)
+
+    return (
+        <>
+            <div className="p-4 max-w-md mx-auto bg-white rounded-lg shadow-md">
+                <fieldset>
+                    <legend className="text-lg font-semibold text-gray-900 mb-4">Which tech tools are in your tech-stack?
+                    </legend>
+                    <div className="flex flex-col gap-2 list-none">
+                        {frontendTechs.map((tech) => <label className="inline-flex items-center">
+                            <input name="tech-options" type="checkbox" /*onClick={handleChoice}*/ className="form-radio h-5 w-5 text-blue-600"
+                                value={tech.name} /*checked={devType === xxx.option}*//>
+                            <span className="ml-2 text-gray-700">{tech.name}
+                            </span>
+                        </label>)}
+                    </div>
+                </fieldset>
+            </div>
+        </>
     )
-
-    return (undefined)
 }
-const frontendTechs = techs.filter(tech => tech.type.includes("frontend"))
-/*now that I have a list of objects that includes the value "frontend" I want to create a list of values from a key "name"
-* but it's a list of objects not an object to access right away*/
 
 
-console.log(frontendTechs)
-// console.log(frontendTechsList)
+
+export default TechnologiesList
+
+
+
+
 
 
