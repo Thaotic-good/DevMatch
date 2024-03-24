@@ -1,4 +1,15 @@
-import React, {useState} from "react";
+/*USER INTERACTION SCENARIO:
+* 1. user make first choice of dev specialization
+* 2. each useState will generate a different list of technologies
+* 3. user will check technologies
+* 4. a function will compare his skill-set and a skill-set required by a job posting
+* _________________________
+* TASKS:
+* 1. export out useState out of this component
+* 2. use it in TechnologiesList to generate a corresponding list*/
+
+import React, {useEffect, useState} from "react";
+import {useButtonsChoice} from "./ButtonsChoiceContext";
 
 const options = [
     {option: "frontend", description: "..the front"},
@@ -6,12 +17,16 @@ const options = [
     {option: "fullstack", description: "..both ways"},
 ]
 
-function TechSelector2(){
+function DevChoice(){
     const [devType, setDevType] = useState('')
+    const {setChoice} = useButtonsChoice()
+
+    useEffect(()=>{
+        setChoice(devType)
+    },[devType])
 
     const handleChoice = (event)=> {
         setDevType(event.target.value)
-        console.log(devType)
     }
 
     return(
@@ -25,8 +40,7 @@ function TechSelector2(){
                     <div className="flex flex-col gap-2">
                         {options.map(xxx => <label className="inline-flex items-center">
                             <input onClick={handleChoice} type="radio" className="form-radio h-5 w-5 text-blue-600"
-                                   name="dev-specialization"
-                                   value={xxx.option} checked={devType === xxx.option}
+                                   name="dev-specialization" value={xxx.option} checked={devType === xxx.option}
                             />
                             <span className="ml-2 text-gray-700">{xxx.description}
                             </span>
@@ -38,4 +52,4 @@ function TechSelector2(){
     )
 }
 
-export default TechSelector2
+export default DevChoice

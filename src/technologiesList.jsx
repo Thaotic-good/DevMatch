@@ -1,3 +1,12 @@
+/* USER INTERACTION SCENARIO:
+1. now user has available an array of technologies
+2. they will tick what they want
+3. techs will be added to a list
+4. the list will be made into a context that will be used in a TechnologiesComparator.jsx
+* */
+import React, {useState, useEffect} from "react";
+import {useButtonsChoice} from "./ButtonsChoiceContext";
+
 const techs = [
     {id: 1, name: "Node.js", category: "runtime", type: ["backend"]},
     {id: 2, name: "Express", category: "framework", type: ["backend"]},
@@ -23,18 +32,57 @@ const techs = [
 ]
 
 function TechnologiesList() {
-    const frontendTechsList = frontendTechs.map((tech) =>
-        <li key={tech.id}>{tech.name}</li>
+    const {choice} = useButtonsChoice()
+    const [usersStack, setUsersStack] = useState([])
+
+    const fullStackTechs = choice === 'fullstack' ? techs : techs.filter(tech =>
+        tech.type.includes(choice));
+    const handleClick= (filteredTech)=> {
+        const isInStack = usersStack.includes(filteredTech.name)
+        /*                      or usersStack.some(tech => tech === filteredTech)*/
+        if (isInStack) {
+            setUsersStack(usersStack.filter(tech=> tech !== filteredTech.name))
+            /*                              = return a new array of all elements that aren't the same as current tech*/
+        } else {
+            setUsersStack(prevUsersStack => [...prevUsersStack, filteredTech.name])
+            /*                              = if it is not isInStack, then add it to usersStack array*/
+        }
+    }
+
+    useEffect(() => {
+        // This code runs after `usersStack` has been updated.
+        console.log(usersStack);
+    }, [usersStack]); // Dependency array - Effect runs when `usersStack` changes.
+
+    return (
+        <>
+            <div className="p-4 max-w-md mx-auto bg-white rounded-lg shadow-md">
+                <fieldset>
+                    <legend className="text-lg font-semibold text-gray-900 mb-4">Which tech tools are in your
+                        tech-stack?
+                    </legend>
+                    <div className="flex flex-col gap-2 list-none">
+                        {fullStackTechs.map((filteredTech) =>
+                        <label key={filteredTech.id} className="inline-flex items-center">
+                            <input name="tech-options" type="checkbox" onClick={()=>handleClick(filteredTech)}
+                                   className="form-radio h-5 w-5 text-blue-600"
+                                   value={filteredTech.name}/>
+                            <span className="ml-2 text-gray-700">{filteredTech.name}
+                            </span>
+                        </label>)
+                        }
+                    </div>
+                </fieldset>
+            </div>
+        </>
     )
-
-    return (undefined)
 }
-const frontendTechs = techs.filter(tech => tech.type.includes("frontend"))
-/*now that I have a list of objects that includes the value "frontend" I want to create a list of values from a key "name"
-* but it's a list of objects not an object to access right away*/
 
 
-console.log(frontendTechs)
-// console.log(frontendTechsList)
+export default TechnologiesList
+
+
+
+
 
 

@@ -1,0 +1,19 @@
+import React, {createContext, useContext, useState} from "react"
+
+const ButtonsChoiceContext = createContext(null);
+
+export function useButtonsChoice(){
+    return useContext(ButtonsChoiceContext)
+}
+
+export function ButtonsChoiceProvider({children}){
+    const [choice, setChoice]= useState('first')
+    return (
+        <ButtonsChoiceContext.Provider value={{choice, setChoice}}>
+            {children}
+        </ButtonsChoiceContext.Provider>
+    );
+}
+
+
+

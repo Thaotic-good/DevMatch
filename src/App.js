@@ -1,13 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
-import TechSelector2 from "./TechSelector2";
+import DevChoice from "./DevChoice";
+import TechnologiesList from "./technologiesList";
+import {ButtonsChoiceProvider} from "./ButtonsChoiceContext";
 
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <TechSelector2/>
+        <ButtonsChoiceProvider>
+        <DevChoice/>
+        <TechnologiesList/>
+        </ButtonsChoiceProvider>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
