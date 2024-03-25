@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="483bb95a-c194-4948-8f06-ef7f8cc0a988" name="Changes" comment="ButtonsChoiceContext kind of works but there are unintended side effects">
-      <change afterPath="$PROJECT_DIR$/src/TechnologiesComparator.jsx" afterDir="false" />
+    <list default="true" id="483bb95a-c194-4948-8f06-ef7f8cc0a988" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/ButtonsChoiceContext.jsx&#10;#&#9;src/DevChoice.jsx&#10;#&#9;src/technologiesList.jsx">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ButtonsChoiceContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ButtonsChoiceContext.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DevChoice.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/DevChoice.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TechnologiesComparator.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TechnologiesComparator.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UsersStackContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsersStackContext.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/technologiesList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/technologiesList.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,7 +130,31 @@
       <option name="project" value="LOCAL" />
       <updated>1711275153009</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ButtonsChoiceContext kind of works but there are unintended side effects">
+      <option name="closed" value="true" />
+      <created>1711380242373</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1711380242373</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/ButtonsChoiceContext.jsx&#10;#&#9;src/DevChoice.jsx&#10;#&#9;src/technologiesList.jsx">
+      <option name="closed" value="true" />
+      <created>1711380897010</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1711380897010</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/ButtonsChoiceContext.jsx&#10;#&#9;src/DevChoice.jsx&#10;#&#9;src/technologiesList.jsx">
+      <option name="closed" value="true" />
+      <created>1711380952980</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1711380952980</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +175,9 @@
     <MESSAGE value="technologiesList separated" />
     <MESSAGE value="correct GitHub account check" />
     <MESSAGE value="tailwind integration unsuccessful" />
+    <MESSAGE value="technologiesList rendering is finished, UsersStackContext initialization" />
     <MESSAGE value="ButtonsChoiceContext kind of works but there are unintended side effects" />
-    <option name="LAST_COMMIT_MESSAGE" value="ButtonsChoiceContext kind of works but there are unintended side effects" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/ButtonsChoiceContext.jsx&#10;#&#9;src/DevChoice.jsx&#10;#&#9;src/technologiesList.jsx" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/ButtonsChoiceContext.jsx&#10;#&#9;src/DevChoice.jsx&#10;#&#9;src/technologiesList.jsx" />
   </component>
 </project>

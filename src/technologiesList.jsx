@@ -6,6 +6,7 @@
 * */
 import React, {useState, useEffect} from "react";
 import {useButtonsChoice} from "./ButtonsChoiceContext";
+import {useUsersStackContext} from "./UsersStackContext";
 
 const techs = [
     {id: 1, name: "Node.js", category: "runtime", type: ["backend"]},
@@ -34,6 +35,11 @@ const techs = [
 function TechnologiesList() {
     const {choice} = useButtonsChoice()
     const [usersStack, setUsersStack] = useState([])
+    const {setStack} = useUsersStackContext()
+
+    useEffect(()=>{
+        setStack(usersStack)
+    },usersStack)
 
     const fullStackTechs = choice === 'fullstack' ? techs : techs.filter(tech =>
         tech.type.includes(choice));
