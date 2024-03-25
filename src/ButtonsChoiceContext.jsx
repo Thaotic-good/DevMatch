@@ -7,7 +7,7 @@ export function useButtonsChoice(){
 }
 
 export function ButtonsChoiceProvider({children}){
-    const [choice, setChoice]= useState('first')
+    const [choice, setChoice]= useState(null)
     return (
         <ButtonsChoiceContext.Provider value={{choice, setChoice}}>
             {children}
