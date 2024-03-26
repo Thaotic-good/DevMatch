@@ -1,15 +1,15 @@
-import React, {useState, createContext} from "react";
+import React, {useState, useContext, createContext} from "react";
 
-const UsersStackContext = createContext(null)
+const UsersStackContext = createContext();
 
-export function useUsersStackContext(){
-    return createContext(UsersStackContext)
+export function useUsersStackContext() {
+    return useContext(UsersStackContext)
 }
 export function UsersStackContextProvider({children}){
-    const [stack, setStack] = useState(null)
+    const [stack, setStack] = useState([]);
     return (
-        <UsersStackContextProvider value={{stack, setStack}}>
+        <UsersStackContext.Provider value={{stack, setStack}}>
             {children}
-        </UsersStackContextProvider>
+        </UsersStackContext.Provider>
     )
 }

@@ -39,7 +39,7 @@ function TechnologiesList() {
 
     useEffect(()=>{
         setStack(usersStack)
-    },usersStack)
+    },[usersStack])
 
     const fullStackTechs = choice === 'fullstack' ? techs : techs.filter(tech =>
         tech.type.includes(choice));

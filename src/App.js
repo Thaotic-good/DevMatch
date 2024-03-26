@@ -5,16 +5,20 @@ import TechnologiesList from "./technologiesList";
 import {ButtonsChoiceProvider} from "./ButtonsChoiceContext";
 import {UsersStackContextProvider} from "./UsersStackContext";
 import TechnologiesComparator from "./TechnologiesComparator";
-
+import React from "react";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <UsersStackContextProvider>
-        <DevChoice/>
-        <TechnologiesList/>
+        <ButtonsChoiceProvider>
+          <DevChoice/>
+          <TechnologiesList/>
+          <TechnologiesComparator/>
+        </ButtonsChoiceProvider>
         </UsersStackContextProvider>
+
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
