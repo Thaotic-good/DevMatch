@@ -1,6 +1,6 @@
 import React, {useState, useContext, createContext} from "react";
 
-const UsersStackContext = createContext();
+export const UsersStackContext = createContext();
 
 export function useUsersStackContext() {
     return useContext(UsersStackContext)

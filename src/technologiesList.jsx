@@ -3,6 +3,8 @@
 2. they will tick what they want
 3. techs will be added to a list
 4. the list will be made into a context that will be used in a TechnologiesComparator.jsx
+5. submission button that will close technologiesList (conditional rendering)
+6. open the TechnologiesComparator.jsx
 * */
 import React, {useState, useEffect} from "react";
 import {useButtonsChoice} from "./ButtonsChoiceContext";
@@ -36,6 +38,7 @@ function TechnologiesList() {
     const {choice} = useButtonsChoice()
     const [usersStack, setUsersStack] = useState([])
     const {setStack} = useUsersStackContext()
+    const [showList, setShowList] = useState(true)
 
     useEffect(()=>{
         setStack(usersStack)
@@ -55,33 +58,45 @@ function TechnologiesList() {
         }
     }
 
-    useEffect(() => {
-        // This code runs after `usersStack` has been updated.
-        console.log(usersStack);
-    }, [usersStack]); // Dependency array - Effect runs when `usersStack` changes.
+    const handleSubmit = ()=> {
+        setShowList(false)
+    }
 
-    return (
-        <>
-            <div className="p-4 max-w-md mx-auto bg-white rounded-lg shadow-md">
-                <fieldset>
-                    <legend className="text-lg font-semibold text-gray-900 mb-4">Which tech tools are in your
-                        tech-stack?
-                    </legend>
-                    <div className="flex flex-col gap-2 list-none">
-                        {fullStackTechs.map((filteredTech) =>
-                        <label key={filteredTech.id} className="inline-flex items-center">
-                            <input name="tech-options" type="checkbox" onClick={()=>handleClick(filteredTech)}
-                                   className="form-radio h-5 w-5 text-blue-600"
-                                   value={filteredTech.name}/>
-                            <span className="ml-2 text-gray-700">{filteredTech.name}
+    // useEffect(() => {
+    //     // This code runs after `usersStack` has been updated.
+    //     console.log(usersStack);
+    // }, [usersStack]); // Dependency array - Effect runs when `usersStack` changes.
+    if (showList) {
+        return (
+            <>
+                <form onSubmit={handleSubmit}>
+                    <div className="p-4 max-w-md mx-auto bg-white rounded-lg shadow-md">
+                        <fieldset>
+                            <div className="text-lg font-semibold text-gray-900 mb-4">Which tech tools are in your
+                                tech-stack?
+                            </div>
+                            <div className="grid grid-cols-3 gap-4">
+                                {fullStackTechs.map((filteredTech) =>
+                                    <label key={filteredTech.id} className="inline-flex items-center">
+                                        <input name="tech-options" type="checkbox" onClick={()=>handleClick(filteredTech)}
+                                               className="form-radio h-5 w-5 text-blue-600"
+                                               value={filteredTech.name}/>
+                                        <span className="ml-2 text-gray-700">{filteredTech.name}
                             </span>
-                        </label>)
-                        }
+                                    </label>)
+                                }
+                            </div>
+                            <div className={"flex justify-center py-2 px-4"}>
+                                <button type={"submit"} className={"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"}>
+                                Submit</button></div>
+                        </fieldset>
                     </div>
-                </fieldset>
-            </div>
-        </>
-    )
+                </form>
+            </>
+        )
+    }
+
+
 }
 
 

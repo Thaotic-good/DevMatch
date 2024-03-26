@@ -1,6 +1,6 @@
 import React, {createContext, useContext, useState} from "react"
 
-const ButtonsChoiceContext = createContext(null);
+export const ButtonsChoiceContext = createContext(null);
 
 export function useButtonsChoice(){
     return useContext(ButtonsChoiceContext)

@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="483bb95a-c194-4948-8f06-ef7f8cc0a988" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/ButtonsChoiceContext.jsx&#10;#&#9;src/DevChoice.jsx&#10;#&#9;src/technologiesList.jsx">
+    <list default="true" id="483bb95a-c194-4948-8f06-ef7f8cc0a988" name="Changes" comment="debugging = browser does not load the app">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TechnologiesComparator.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TechnologiesComparator.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ButtonsChoiceContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ButtonsChoiceContext.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UsersStackContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsersStackContext.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/technologiesList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/technologiesList.jsx" afterDir="false" />
     </list>
@@ -97,7 +97,7 @@
       <workItem from="1710611378735" duration="13600000" />
       <workItem from="1710744599187" duration="2000000" />
       <workItem from="1710759169179" duration="9542000" />
-      <workItem from="1711454852301" duration="1633000" />
+      <workItem from="1711454852301" duration="7181000" />
     </task>
     <task id="LOCAL-00001" summary="technologiesList separated">
       <option name="closed" value="true" />
@@ -163,7 +163,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711382529064</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="debugging = browser does not load the app">
+      <option name="closed" value="true" />
+      <created>1711456549026</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1711456549026</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +195,7 @@
     <MESSAGE value="technologiesList rendering is finished, UsersStackContext initialization" />
     <MESSAGE value="ButtonsChoiceContext kind of works but there are unintended side effects" />
     <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/ButtonsChoiceContext.jsx&#10;#&#9;src/DevChoice.jsx&#10;#&#9;src/technologiesList.jsx" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/ButtonsChoiceContext.jsx&#10;#&#9;src/DevChoice.jsx&#10;#&#9;src/technologiesList.jsx" />
+    <MESSAGE value="debugging = browser does not load the app" />
+    <option name="LAST_COMMIT_MESSAGE" value="debugging = browser does not load the app" />
   </component>
 </project>
