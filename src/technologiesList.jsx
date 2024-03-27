@@ -9,6 +9,7 @@
 import React, {useState, useEffect} from "react";
 import {useButtonsChoice} from "./ButtonsChoiceContext";
 import {useUsersStackContext} from "./UsersStackContext";
+import TechnologiesComparator from "./TechnologiesComparator";
 
 const techs = [
     {id: 1, name: "Node.js", category: "runtime", type: ["backend"]},
@@ -57,15 +58,14 @@ function TechnologiesList() {
             /*                              = if it is not isInStack, then add it to usersStack array*/
         }
     }
-
-    const handleSubmit = ()=> {
-        setShowList(false)
-    }
-
     // useEffect(() => {
     //     // This code runs after `usersStack` has been updated.
     //     console.log(usersStack);
     // }, [usersStack]); // Dependency array - Effect runs when `usersStack` changes.
+    const handleSubmit = (event)=> {
+        event.preventDefault()
+        setShowList(false)
+    }
     if (showList) {
         return (
             <>
@@ -92,6 +92,13 @@ function TechnologiesList() {
                         </fieldset>
                     </div>
                 </form>
+            </>
+        )
+    }
+    else {
+        return (
+            <>
+                <TechnologiesComparator/>
             </>
         )
     }

@@ -4,7 +4,6 @@ import DevChoice from "./DevChoice";
 import TechnologiesList from "./technologiesList";
 import {ButtonsChoiceProvider} from "./ButtonsChoiceContext";
 import {UsersStackContextProvider} from "./UsersStackContext";
-import TechnologiesComparator from "./TechnologiesComparator";
 import React from "react";
 
 function App() {
@@ -15,7 +14,6 @@ function App() {
         <ButtonsChoiceProvider>
           <DevChoice/>
           <TechnologiesList/>
-          <TechnologiesComparator/>
         </ButtonsChoiceProvider>
         </UsersStackContextProvider>
 
