@@ -1,4 +1,29 @@
-/*USER INTERACTION SCENARIO*/
+/*USER INTERACTION SCENARIO
+* ! logic isn't flowing
+* ? in which step do I show the job listing
+* 1. I need to create a new component JobListingCard
+* - form of an input to input a job listing requirements
+* - already created card, from a real job listing (should include a link)
+* - or the card of job listings should appear after making the first DevChoice
+* - iframe
+* 2. adding steps
+// <div id="app">
+//     <div className="alm">
+//         <div className="gx ua aqu">
+//             <nav aria-label="Progress">
+//                 <ol role="list" className="abw cle cnr cns">
+//                     <li className="cmd"><a href="#" className="bqe lx yr afj agh aru atm bhn cny cob cov cox cpi"><span
+//                         className="avz awd ayg brs">Step 1</span><span className="avz awd">Job details</span></a></li>
+//                     <li className="cmd"><a href="#" className="lx yr afj agh aru atm cny cob cov cox cpi"
+//                                            aria-current="step"><span className="avz awd ayg">Step 2</span><span
+//                         className="avz awd">Application form</span></a></li>
+//                     <li className="cmd"><a href="#" className="bqe lx yr afj afu aru atm bhl cny cob cov cox cpi"><span
+//                         className="avz awd axq brm">Step 3</span><span className="avz awd">Preview</span></a></li>
+//                 </ol>
+//             </nav>
+//         </div>
+//     </div>
+// </div>*/
 import {useUsersStackContext} from "./UsersStackContext";
 import React from "react";
 
