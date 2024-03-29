@@ -7,7 +7,7 @@
 
 import React from "react";
 
-const jobListing= [
+const jobListings= [
     {positionName: "Frontend Developer", company:"Make it Run",
         requiredQualifications:["ES6", "SASS/LESS", "HTML5","CSS3", "GIT", "Typescript", "VueJS", "React"],
         logo: "https://assets-global.website-files.com/63ee59edd1380726dd5586cf/63ef5ca3a6752067932fbd4e_Logo.svg",
@@ -36,21 +36,21 @@ function JobListingCard(){
                         </p>
                     </div>
                     <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
-                        <li>
-                            <div className="flex items-center gap-x-6">
-                                <img className="h-16 w-16 rounded-full"
-                                     src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                     alt=""/>
-                                    <div>
-                                        <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">Leslie
-                                            Alexander
-                                        </h3>
-                                        <p className="text-sm font-semibold leading-6 text-indigo-600">Co-Founder /
-                                            CEO
-                                        </p>
-                                    </div>
-                            </div>
-                        </li>
+                        {/*{jobListings.map()<li>*/}
+                        {/*    <div className="flex items-center gap-x-6">*/}
+                        {/*        <img className="h-16 w-16 rounded-full"*/}
+                        {/*             src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"*/}
+                        {/*             alt=""/>*/}
+                        {/*            <div>*/}
+                        {/*                <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">Leslie*/}
+                        {/*                    Alexander*/}
+                        {/*                </h3>*/}
+                        {/*                <p className="text-sm font-semibold leading-6 text-indigo-600">Co-Founder /*/}
+                        {/*                    CEO*/}
+                        {/*                </p>*/}
+                        {/*            </div>*/}
+                        {/*    </div>*/}
+                        {/*</li>}*/}
                     </ul>
                 </div>
             </div>
