@@ -5,7 +5,6 @@
 * - form of an input to input a job listing requirements
 * - already created card, from a real job listing (should include a link)
 * - or the card of job listings should appear after making the first DevChoice
-* - iframe
 * 2. adding steps
 // <div id="app">
 //     <div className="alm">
@@ -23,14 +22,16 @@
 //             </nav>
 //         </div>
 //     </div>
-// </div>*/
+// </div>
+* 3. adding input for email*/
 import {useUsersStackContext} from "./UsersStackContext";
 import React from "react";
 
-const requiredQualifications = [{}]
 function TechnologiesComparator() {
+    const {choice} = useUsersStackContext()
     const {stack} = useUsersStackContext();
     console.log(stack);
+    console.log(choice)
 
     return (
         <>

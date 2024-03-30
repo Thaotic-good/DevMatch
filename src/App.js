@@ -1,19 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
-import DevChoice from "./DevChoice";
-import TechnologiesList from "./technologiesList";
 import {ButtonsChoiceProvider} from "./ButtonsChoiceContext";
 import {UsersStackContextProvider} from "./UsersStackContext";
 import React from "react";
+import JobListingCard from "./JobListingCard";
 
+/*TASKS:
+* 1. */
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <UsersStackContextProvider>
         <ButtonsChoiceProvider>
-          <DevChoice/>
-          <TechnologiesList/>
+          <JobListingCard/>
         </ButtonsChoiceProvider>
         </UsersStackContextProvider>
 

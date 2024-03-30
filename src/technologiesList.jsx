@@ -7,9 +7,7 @@
 6. open the TechnologiesComparator.jsx
 * */
 import React, {useState, useEffect} from "react";
-import {useButtonsChoice} from "./ButtonsChoiceContext";
 import {useUsersStackContext} from "./UsersStackContext";
-import TechnologiesComparator from "./TechnologiesComparator";
 
 const techs = [
     {id: 1, name: "Node.js", category: "runtime", type: ["backend"]},
@@ -36,74 +34,60 @@ const techs = [
 ]
 
 function TechnologiesList() {
-    const {choice} = useButtonsChoice()
     const [usersStack, setUsersStack] = useState([])
     const {setStack} = useUsersStackContext()
-    const [showList, setShowList] = useState(true)
 
-    useEffect(()=>{
+    useEffect(() => {
         setStack(usersStack)
-    },[usersStack])
+    }, [usersStack])
 
-    const fullStackTechs = choice === 'fullstack' ? techs : techs.filter(tech =>
-        tech.type.includes(choice));
-    const handleClick= (filteredTech)=> {
+    const handleClick = (filteredTech) => {
         const isInStack = usersStack.includes(filteredTech.name)
         /*                      or usersStack.some(tech => tech === filteredTech)*/
         if (isInStack) {
-            setUsersStack(usersStack.filter(tech=> tech !== filteredTech.name))
+            setUsersStack(usersStack.filter(tech => tech !== filteredTech.name))
             /*                              = return a new array of all elements that aren't the same as current tech*/
         } else {
             setUsersStack(prevUsersStack => [...prevUsersStack, filteredTech.name])
             /*                              = if it is not isInStack, then add it to usersStack array*/
         }
     }
-    // useEffect(() => {
-    //     // This code runs after `usersStack` has been updated.
-    //     console.log(usersStack);
-    // }, [usersStack]); // Dependency array - Effect runs when `usersStack` changes.
-    const handleSubmit = (event)=> {
+
+    const handleSubmit = (event) => {
         event.preventDefault()
-        setShowList(false)
+        setStack(usersStack)
     }
-    if (showList) {
-        return (
-            <>
-                <form onSubmit={handleSubmit}>
-                    <div className="p-4 max-w-md mx-auto bg-white rounded-lg shadow-md">
-                        <fieldset>
-                            <div className="text-lg font-semibold text-gray-900 mb-4">Which tech tools are in your
-                                tech-stack?
-                            </div>
-                            <div className="grid grid-cols-3 gap-4">
-                                {fullStackTechs.map((filteredTech) =>
-                                    <label key={filteredTech.id} className="inline-flex items-center">
-                                        <input name="tech-options" type="checkbox" onClick={()=>handleClick(filteredTech)}
-                                               className="form-radio h-5 w-5 text-blue-600"
-                                               value={filteredTech.name}/>
-                                        <span className="ml-2 text-gray-700">{filteredTech.name}
+
+    return (
+        <>
+            <form onSubmit={handleSubmit}>
+                <div className="p-4 max-w-lg mx-auto bg-white rounded-lg shadow-md">
+                    <fieldset>
+                        <div className="text-lg font-semibold text-gray-900 mb-4">Which tech tools are in your
+                            tech-stack?
+                        </div>
+                        <div className="grid grid-cols-3 gap-4">
+                            {techs.map((filteredTech) =>
+                                <label key={filteredTech.id} className="inline-flex items-center">
+                                    <input name="tech-options" type="checkbox" onClick={() => handleClick(filteredTech)}
+                                           className="form-radio h-5 w-5 text-blue-600"
+                                           value={filteredTech.name}/>
+                                    <span className="ml-2 text-gray-700">{filteredTech.name}
                             </span>
-                                    </label>)
-                                }
-                            </div>
-                            <div className={"flex justify-center py-2 px-4"}>
-                                <button type={"submit"} className={"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"}>
-                                Submit</button></div>
-                        </fieldset>
-                    </div>
-                </form>
-            </>
-        )
-    }
-    else {
-        return (
-            <>
-                <TechnologiesComparator/>
-            </>
-        )
-    }
-
-
+                                </label>)
+                            }
+                        </div>
+                        <div className={"flex justify-center py-2 px-4"}>
+                            <button type={"submit"}
+                                    className={"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"}>
+                                Submit
+                            </button>
+                        </div>
+                    </fieldset>
+                </div>
+            </form>
+        </>
+    )
 }
 
 
