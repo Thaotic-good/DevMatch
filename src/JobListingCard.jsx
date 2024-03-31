@@ -15,14 +15,15 @@ import TechnologiesList from "./technologiesList";
 
 const jobListings= [
     {positionName: "Frontend Developer", company:"Make it Run",
-        requiredQualifications:["ES6", "SASS/LESS", "HTML5","CSS3", "GIT", "Typescript", "VueJS", "React"],
+        requiredQualifications:["JavaScript", "SASS/LESS", "HTML","CSS", "Git", "TypeScript", "Vue.js", "React.js"],
         logo: MakeItRun,
         link:"https://www.jobstack.it/it-job/developer-other/5fabe3fe8c0be"},
-    {positionName: "Junior Frontend Developer", company:"Koala42", requiredQualifications:["React.js", "TypeScript", "Redux", "Git"],
+    {positionName: "Junior Frontend Developer", company:"Koala42",
+        requiredQualifications:["React.js", "TypeScript", "Redux", "Git"],
         logo: "https://koala42.com/_next/static/media/koalaLogo.9762b7c2.svg",
         link:"https://www.startupjobs.cz/nabidka/48603/junior-frontend-developer-zlin-praha"},
     {positionName: "Frontend Developer", company:"Cleevio",
-        requiredQualifications:["React", "NextJS", "TypeScript", "CSS", "GraphQL", "VueJS", "Svelte"],
+        requiredQualifications:["React.js", "Next.js", "TypeScript", "CSS", "GraphQL", "Vue.js", "Svelte"],
         logo: "https://www.jobstack.it/uploads/images/b4c3e380d256ec1882b7b80c943afdc5.png",
         link:"https://www.jobstack.it/it-job/react-developer/60473552b3cf1"},
     ]

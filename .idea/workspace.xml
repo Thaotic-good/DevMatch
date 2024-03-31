@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="483bb95a-c194-4948-8f06-ef7f8cc0a988" name="Changes" comment="jobListing props">
-      <change afterPath="$PROJECT_DIR$/src/img/makeItRunLogo.jpeg" afterDir="false" />
+    <list default="true" id="483bb95a-c194-4948-8f06-ef7f8cc0a988" name="Changes" comment="changed logo src to makeItRunLogo.jpeg, deletion of DevChoice.jsx, JobListingCard conditionally renders technologiesList.jsx but the Submit button has problems">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DevChoice.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/JobListingCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/JobListingCard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TechnologiesComparator.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TechnologiesComparator.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UsersStackContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsersStackContext.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/technologiesList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/technologiesList.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,8 +36,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Node.js.JobListingCard.jsx.executor": "Debug",
     "Node.js.scratch_263.js.executor": "Run",
-    "Node.js.technologiesList.jsx.executor": "Run",
+    "Node.js.technologiesList.jsx.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -72,7 +71,10 @@
       <recent name="C:\Users\Thu Thao Dongová\IdeaProjects\Qualification-filter" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.technologiesList.jsx">
+  <component name="RunManager" selected="Node.js.JobListingCard.jsx">
+    <configuration name="JobListingCard.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/JobListingCard.jsx" working-dir="$PROJECT_DIR$/src">
+      <method v="2" />
+    </configuration>
     <configuration name="scratch_263.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$APPLICATION_CONFIG_DIR$/scratches/scratch_263.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -81,6 +83,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.JobListingCard.jsx" />
         <item itemvalue="Node.js.technologiesList.jsx" />
         <item itemvalue="Node.js.scratch_263.js" />
       </list>
@@ -210,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711648827073</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="changed logo src to makeItRunLogo.jpeg, deletion of DevChoice.jsx, JobListingCard conditionally renders technologiesList.jsx but the Submit button has problems">
+      <option name="closed" value="true" />
+      <created>1711829887821</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1711829887821</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +250,8 @@
     <MESSAGE value="TechnologiesComparator.jsx added a static load progress bar" />
     <MESSAGE value="comments and planning of JobListingCard coponent" />
     <MESSAGE value="jobListing props" />
-    <option name="LAST_COMMIT_MESSAGE" value="jobListing props" />
+    <MESSAGE value="changed logo src to makeItRunLogo.jpeg, deletion of DevChoice.jsx, JobListingCard conditionally renders technologiesList.jsx but the Submit button has problems" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed logo src to makeItRunLogo.jpeg, deletion of DevChoice.jsx, JobListingCard conditionally renders technologiesList.jsx but the Submit button has problems" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

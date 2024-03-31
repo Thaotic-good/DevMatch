@@ -8,6 +8,7 @@
 * */
 import React, {useState, useEffect} from "react";
 import {useUsersStackContext} from "./UsersStackContext";
+import TechnologiesComparator from "./TechnologiesComparator";
 
 const techs = [
     {id: 1, name: "Node.js", category: "runtime", type: ["backend"]},
@@ -19,27 +20,28 @@ const techs = [
     {id: 7, name: "HTML", category: "language", type: ["frontend"]},
     {id: 8, name: "CSS", category: "language", type: ["frontend"]},
     {id: 9, name: "JavaScript", category: "language", type: ["frontend", "backend"]},
-    {id: 10, name: "React", category: "library", type: ["frontend"]},
+    {id: 10, name: "React.js", category: "library", type: ["frontend"]},
     {id: 11, name: "Angular", category: "framework", type: ["frontend"]},
     {id: 12, name: "Vue.js", category: "framework", type: ["frontend"]},
     {id: 13, name: "jQuery", category: "library", type: ["frontend"]},
     {id: 14, name: "TypeScript", category: "language", type: ["frontend", "backend"]},
     {id: 15, name: "Webpack", category: "tool", type: ["frontend"]},
-    {id: 16, name: "SASS/SCSS", category: "language", type: ["frontend"]},
+    {id: 16, name: "SASS/LESS", category: "language", type: ["frontend"]},
     {id: 17, name: "GraphQL", category: "language", type: ["frontend", "backend"]},
     {id: 18, name: "MongoDB", category: "database", type: ["backend"]},
     {id: 19, name: "Redis", category: "database", type: ["backend"]},
     {id: 20, name: "Redux", category: "library", type: ["frontend"]},
-    {id: 21, name: "Kotlin", category: "language", type: ["backend"]}
+    {id: 21, name: "Kotlin", category: "language", type: ["backend"]},
+    {id: 22, name: "Git", category:"tool" , type: ["frontend", "backend"]},
+    {id: 23, name: "Next.js", category:"framework" , type: ["frontend", "backend"]},
+    {id: 24, name: "Svelte", category:"framework" , type: ["frontend"]},
 ]
 
 function TechnologiesList() {
     const [usersStack, setUsersStack] = useState([])
     const {setStack} = useUsersStackContext()
-
-    useEffect(() => {
-        setStack(usersStack)
-    }, [usersStack])
+    const [showList, setShowList] = useState(true)
+    const [showResult, setShowResult] = useState(false)
 
     const handleClick = (filteredTech) => {
         const isInStack = usersStack.includes(filteredTech.name)
@@ -56,17 +58,24 @@ function TechnologiesList() {
     const handleSubmit = (event) => {
         event.preventDefault()
         setStack(usersStack)
+        setShowList(false)
+        setShowResult(true)
     }
+    // useEffect(()=>{
+    //     console.log(usersStack)
+    //     }
+    // )
 
     return (
         <>
+            {showList &&
             <form onSubmit={handleSubmit}>
-                <div className="p-4 max-w-lg mx-auto bg-white rounded-lg shadow-md">
+                <div className="p-4 max-w-screen-lg mx-auto bg-white rounded-lg shadow-md">
                     <fieldset>
                         <div className="text-lg font-semibold text-gray-900 mb-4">Which tech tools are in your
                             tech-stack?
                         </div>
-                        <div className="grid grid-cols-3 gap-4">
+                        <div className="grid grid-cols-4 gap-4">
                             {techs.map((filteredTech) =>
                                 <label key={filteredTech.id} className="inline-flex items-center">
                                     <input name="tech-options" type="checkbox" onClick={() => handleClick(filteredTech)}
@@ -85,7 +94,8 @@ function TechnologiesList() {
                         </div>
                     </fieldset>
                 </div>
-            </form>
+            </form>}
+            {showResult && <TechnologiesComparator/>}
         </>
     )
 }
