@@ -1,11 +1,9 @@
 /*1. I need to create a new component JobListingCard
 - already created card, from a real job listing (should include a link)
 (a form to input job listing requirements)
-(or the card of job listings should appear after making the first DevChoice)
 (paste the job description, and DevMatch instantly highlights key tech requirements)
 2. user chooses the company with which he will compare his tech-stack
-3.
-4. the requiredQualifications of that becomes a state which gets passes to TechnologiesComparator
+3.the requiredQualifications of that becomes a state which gets passes to TechnologiesComparator
 */
 
 import React, {useEffect, useState} from "react";
@@ -31,15 +29,25 @@ function JobListingCard(){
     const [chosenCompaniesRequirements, setChosenCompaniesRequirements]= useState([])
     const {setChoice} = useButtonsChoice()
     const [showList, setShowList] = useState(false)
+    const [logoClicked, setLogoClicked] = useState(null)
 
     const handleClick =(position)=>{
         setChosenCompaniesRequirements(position.requiredQualifications)
         setShowList(true)
+        if (logoClicked===position.company){
+            setLogoClicked(null)
+        } else {
+            setLogoClicked(position.company)
+        }
     }
 
     useEffect(() =>{
         setChoice(chosenCompaniesRequirements)
     },[chosenCompaniesRequirements])
+
+    useEffect(() => {
+        console.log(chosenCompaniesRequirements)
+    }, [chosenCompaniesRequirements]);
 
     return(
         <>
@@ -58,11 +66,14 @@ function JobListingCard(){
                         {jobListings.map((position)=>
                             <li key={position.company}>
                             <div className="flex items-center gap-x-6">
-                                <img className="h-16 w-16 rounded-full"
+                                <button>
+                                <img className={`h-16 w-16 rounded-full
+                                ${logoClicked===position.company? "h-20 w-20 ring-8 ring-blue-500" : "hover:h-20 hover:w-auto"} transition-all duration-300`}
                                      src={position.logo}
                                      alt=""
                                      onClick={()=> handleClick(position)}
                                 />
+                                </button>
                                     <div>
                                         <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900"
                                             onClick={()=> handleClick(position)}>

@@ -6,7 +6,7 @@
 5. submission button that will close technologiesList (conditional rendering)
 6. open the TechnologiesComparator.jsx
 * */
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import {useUsersStackContext} from "./UsersStackContext";
 import TechnologiesComparator from "./TechnologiesComparator";
 
@@ -61,10 +61,6 @@ function TechnologiesList() {
         setShowList(false)
         setShowResult(true)
     }
-    // useEffect(()=>{
-    //     console.log(usersStack)
-    //     }
-    // )
 
     return (
         <>

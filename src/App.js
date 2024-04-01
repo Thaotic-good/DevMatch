@@ -13,7 +13,9 @@ function App() {
       <header className="App-header">
         <UsersStackContextProvider>
         <ButtonsChoiceProvider>
+        <PercentageMatchContext.Provider>
           <JobListingCard/>
+        </PercentageMatchContext.Provider>
         </ButtonsChoiceProvider>
         </UsersStackContextProvider>
 
