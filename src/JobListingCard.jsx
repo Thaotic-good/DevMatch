@@ -1,6 +1,7 @@
 /*1. I need to create a new component JobListingCard
 - already created card, from a real job listing (should include a link)
 (a form to input job listing requirements)
+(or the card of job listings should appear after making the first DevChoice)
 (paste the job description, and DevMatch instantly highlights key tech requirements)
 2. user chooses the company with which he will compare his tech-stack
 3.the requiredQualifications of that becomes a state which gets passes to TechnologiesComparator
