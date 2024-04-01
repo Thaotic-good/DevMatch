@@ -1,15 +1,14 @@
 /*1. I need to create a new component JobListingCard
 - already created card, from a real job listing (should include a link)
 (a form to input job listing requirements)
-(or the card of job listings should appear after making the first DevChoice)
 (paste the job description, and DevMatch instantly highlights key tech requirements)
 2. user chooses the company with which he will compare his tech-stack
-3.
-4. the requiredQualifications of that becomes a state which gets passes to TechnologiesComparator
+3.the requiredQualifications of that becomes a state which gets passes to TechnologiesComparator
 */
 
 import React, {useEffect, useState} from "react";
 import MakeItRun from "./img/makeItRunLogo.jpeg"
+import koala42 from "./img/koalaLogo.2.svg"
 import {useButtonsChoice} from "./ButtonsChoiceContext";
 import TechnologiesList from "./technologiesList";
 
@@ -31,20 +30,30 @@ function JobListingCard(){
     const [chosenCompaniesRequirements, setChosenCompaniesRequirements]= useState([])
     const {setChoice} = useButtonsChoice()
     const [showList, setShowList] = useState(false)
+    const [logoClicked, setLogoClicked] = useState(null)
 
     const handleClick =(position)=>{
         setChosenCompaniesRequirements(position.requiredQualifications)
         setShowList(true)
+        if (logoClicked===position.company){
+            setLogoClicked(null)
+        } else {
+            setLogoClicked(position.company)
+        }
     }
 
     useEffect(() =>{
         setChoice(chosenCompaniesRequirements)
     },[chosenCompaniesRequirements])
 
+    useEffect(() => {
+        console.log(chosenCompaniesRequirements)
+    }, [chosenCompaniesRequirements]);
+
     return(
         <>
-            <div className="bg-white rounded-lg py-24 sm:py-26">
-                <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
+            <div className="flex content-center bg-white rounded-lg py-24 sm:py-26">
+                <div className=" mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
                     <div className="max-w-2xl">
                         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Welcome to DevMatch
                         </h2>
@@ -58,11 +67,14 @@ function JobListingCard(){
                         {jobListings.map((position)=>
                             <li key={position.company}>
                             <div className="flex items-center gap-x-6">
-                                <img className="h-16 w-16 rounded-full"
+                                <button type="submit">
+                                <img className={`h-16 w-16 rounded-full
+                                ${logoClicked===position.company? "h-20 w-auto ring-8 ring-blue-500" : "hover:h-20 hover:w-auto"} transition-all duration-300`}
                                      src={position.logo}
                                      alt=""
                                      onClick={()=> handleClick(position)}
                                 />
+                                </button>
                                     <div>
                                         <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900"
                                             onClick={()=> handleClick(position)}>
@@ -74,8 +86,8 @@ function JobListingCard(){
                             </div>
                         </li>)}
                     </ul>
-                    <div>{showList  && <TechnologiesList/>}
-                    </div>
+                        {showList  && <TechnologiesList/>}
+
                 </div>
             </div>
         </>
