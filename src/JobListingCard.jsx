@@ -9,7 +9,7 @@
 
 import React, {useEffect, useState} from "react";
 import MakeItRun from "./img/makeItRunLogo.jpeg"
-import koala42 from "./img/koalaLogo.2.svg"
+import koala42 from "./img/Koala3.jpeg"
 import {useButtonsChoice} from "./ButtonsChoiceContext";
 import TechnologiesList from "./technologiesList";
 
@@ -20,7 +20,7 @@ const jobListings= [
         link:"https://www.jobstack.it/it-job/developer-other/5fabe3fe8c0be"},
     {positionName: "Junior Frontend Developer", company:"Koala42",
         requiredQualifications:["React.js", "TypeScript", "Redux", "Git"],
-        logo: "https://koala42.com/_next/static/media/koalaLogo.9762b7c2.svg",
+        logo: koala42,
         link:"https://www.startupjobs.cz/nabidka/48603/junior-frontend-developer-zlin-praha"},
     {positionName: "Frontend Developer", company:"Cleevio",
         requiredQualifications:["React.js", "Next.js", "TypeScript", "CSS", "GraphQL", "Vue.js", "Svelte"],
@@ -47,14 +47,10 @@ function JobListingCard(){
         setChoice(chosenCompaniesRequirements)
     },[chosenCompaniesRequirements])
 
-    useEffect(() => {
-        console.log(chosenCompaniesRequirements)
-    }, [chosenCompaniesRequirements]);
-
     return(
         <>
             <div className="flex content-center bg-white rounded-lg py-24 sm:py-26">
-                <div className=" mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
+                <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
                     <div className="max-w-2xl">
                         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Welcome to DevMatch
                         </h2>
@@ -64,17 +60,18 @@ function JobListingCard(){
                             Choose your desired company, and let's see if we click!
                         </p>
                     </div>
-                    <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-3 sm:gap-y-16 xl:col-span-2 items-center">
+                    <ul role="list" className="grid gap-x-7 gap-y-12 sm:grid-cols-3 sm:gap-y-16 xl:col-span-2 xl:gap-y-0 items-center">
                         {jobListings.map((position)=>
                             <li key={position.company}>
-                            <div className="flex items-center gap-x-6">
+                            <div className="flex items-center gap-x-4">
                                 <button type="submit">
-                                <img className={`h-16 w-16 rounded-full
-                                ${logoClicked===position.company? "h-20 w-auto ring-8 ring-blue-500" : "hover:h-20 hover:w-auto"} transition-all duration-300`}
+                                    <div className={`h-16 w-16 ${logoClicked===position.company? "h-20 w-20" : "hover:h-20 hover:w-20"} transition-all duration-300`}>
+                                <img className={`rounded-full ${logoClicked===position.company? "ring-8 ring-blue-500" : ""}`}
                                      src={position.logo}
                                      alt=""
                                      onClick={()=> handleClick(position)}
                                 />
+                                    </div>
                                 </button>
                                     <div>
                                         <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900"
