@@ -1,5 +1,5 @@
 # DevMatch
-Welcome to DevMatch, a React application designed to seamlessly connect tech professionals with their perfect job match.
+Welcome to DevMatch, a React application designed to seamlessly connect tech professionals with their perfect job match. 
 
 ## Purpose
 This application is meant to showcase my ability to use React to build dynamic, single-page applications (SPAs) from design to deployment.
@@ -13,7 +13,7 @@ Visual Compatibility Score: Understand at a glance how well your skills match up
 Responsive Design: Whether on desktop or mobile, enjoy a fully responsive experience tailored to your device.
 
 ### Getting Started
-To get started with DevMatch, visit Thaotic-good.github.io.
+To get started with DevMatch, visit [Thaotic-good.github.io.](https://thaotic-good.github.io/DevMatch/)
 
 ### Contributing
 Interested in contributing? Great! Feel free to fork the repository, and submit a pull request with your improvements.
