@@ -66,12 +66,12 @@ function TechnologiesList() {
         <>
             {showList &&
             <form onSubmit={handleSubmit}>
-                <div className="p-4 max-w-screen-lg w-max mx-auto bg-white rounded-lg shadow-md">
+                <div className="p-4 max-w-screen-lg mx-auto bg-white rounded-lg shadow-md overflow-hidden">
                     <fieldset>
                         <div className="text-lg font-semibold text-gray-900 mb-4">Which tech tools are in your
                             tech-stack?
                         </div>
-                        <div className="grid grid-cols-4 gap-4">
+                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                             {techs.map((filteredTech) =>
                                 <label key={filteredTech.id} className="inline-flex items-center">
                                     <input name="tech-options" type="checkbox" onClick={() => handleClick(filteredTech)}
@@ -82,9 +82,9 @@ function TechnologiesList() {
                                 </label>)
                             }
                         </div>
-                        <div className={"flex justify-center py-2 px-4"}>
+                        <div className={"flex justify-center py-2 px-4 mt-4"}>
                             <button type={"submit"}
-                                    className={"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"}>
+                                    className={"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200 ease-in-out"}>
                                 Submit
                             </button>
                         </div>
