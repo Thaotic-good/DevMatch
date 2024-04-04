@@ -1,0 +1,39 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - main  # Set this to your default branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Cache Node.js modules #designated spot where you keep ingredients you use often, so you know exactly where to go when you need something fast
+      uses: actions/cache@v2 #containers that are designed to keep the ingredients fresh and are labeled and organized for easy access
+      with:
+        path: ~/.npm #special section of the pantry dedicated to these frequently used ingredients, ensuring they're always at hand
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }} #label includes the type of kitchen (OS), the fact that these are ingredients for the signature dish (Node.js modules), 
+        # and a unique identifier (the hash of package-lock.json) that changes if the recipe (dependencies) changes
+        restore-keys: | #backup plan for when you can't find a container labeled with the exact date and ingredient list you were looking for
+          ${{ runner.os }}-node- 
+      
+    - name: Setup Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'  # Set this to the node version you are using
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Build
+      run: npm run build
+
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@4.1.4
+      with:
+        branch: gh-pages  # The branch the action should deploy to.
+        folder: build  # The folder the action should deploy.
+        token: ${{ secrets.GITHUB_TOKEN }}  # GitHub automatically creates this secret to use in actions.
