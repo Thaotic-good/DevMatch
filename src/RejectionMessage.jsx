@@ -5,7 +5,7 @@ function RejectionMessage(){
     const {percentage} = usePercentageMatch()
     return(
         <>
-            <div className="relative isolate overflow-hidden max-w-7xl rounded-lg bg-gray-900 py-16 sm:py-24 lg:py-32">
+            <div className="relative isolate overflow-hidden mx-auto rounded-lg bg-gray-900 py-16 sm:py-24 lg:py-32">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto max-w-2xl  lg:max-w-none lg:grid lg:grid-cols-2 gap4">
                         <div className="max-w-xl lg:max-w-lg p4">

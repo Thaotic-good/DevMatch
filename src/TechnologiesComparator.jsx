@@ -52,8 +52,7 @@ function TechnologiesComparator() {
 
     return (
         <>
-            <div className={"w-screen"}>{percentageMatch>=80? <EmailInput/> : <RejectionMessage/>}</div>
-
+            {percentageMatch>=80? <EmailInput/> : <RejectionMessage/>}
         </>
     )
 }
