@@ -37,18 +37,17 @@ function TechnologiesComparator() {
         const matches = stack.filter(tech=> choice.includes(tech))
         /* if the current element passes the condition, it gets added to the new array*/
         setMatchingTech(matches)
-    }, [choice])
+    }, [choice, stack])
 
     useEffect(()=>{
         setPercentage(percentageMatch)
-    },[percentageMatch])
+    },[percentageMatch, setPercentage])
 
     useEffect(() => {
         const lengthRequiredTechs = choice.length
         const lengthMatch = matchingTech.length
         setPercentageMatch(()=> (lengthMatch / lengthRequiredTechs)*100)
-    }, [matchingTech]);
-    console.log(typeof Math.ceil(percentageMatch))
+    }, [matchingTech, choice]);
 
     return (
         <>
