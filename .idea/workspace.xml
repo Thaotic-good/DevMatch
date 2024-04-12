@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="483bb95a-c194-4948-8f06-ef7f8cc0a988" name="Changes" comment="initialization of EmailInput.jsx, created PercentageMatchContext.jsx,">
+    <list default="true" id="483bb95a-c194-4948-8f06-ef7f8cc0a988" name="Changes" comment="reverted branch">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TechnologiesComparator.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TechnologiesComparator.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +104,7 @@
       <workItem from="1711553913227" duration="3263000" />
       <workItem from="1711617895951" duration="1787000" />
       <workItem from="1711623491732" duration="4476000" />
-      <workItem from="1712928420937" duration="1006000" />
+      <workItem from="1712928420937" duration="1918000" />
     </task>
     <task id="LOCAL-00001" summary="technologiesList separated">
       <option name="closed" value="true" />
@@ -235,7 +234,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711976097730</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="reverted branch">
+      <option name="closed" value="true" />
+      <created>1712929685939</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1712929685939</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,7 +274,8 @@
     <MESSAGE value="changed logo src to makeItRunLogo.jpeg, deletion of DevChoice.jsx, JobListingCard conditionally renders technologiesList.jsx but the Submit button has problems" />
     <MESSAGE value="matching of array of RequiredTechnologies and UsersStack, progress bar dynamic UI started but there are percentage math problems" />
     <MESSAGE value="initialization of EmailInput.jsx, created PercentageMatchContext.jsx," />
-    <option name="LAST_COMMIT_MESSAGE" value="initialization of EmailInput.jsx, created PercentageMatchContext.jsx," />
+    <MESSAGE value="reverted branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="reverted branch" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
