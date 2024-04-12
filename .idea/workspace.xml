@@ -4,20 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="483bb95a-c194-4948-8f06-ef7f8cc0a988" name="Changes" comment="CI/CD pipline finished">
+    <list default="true" id="483bb95a-c194-4948-8f06-ef7f8cc0a988" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/deploy2.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JobListingCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/JobListingCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TechnologiesComparator.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TechnologiesComparator.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="reverted" />
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="reverted" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="KubernetesApiProvider">{
@@ -72,43 +76,21 @@
       <recent name="C:\Users\Thu Thao Dongová\IdeaProjects\Qualification-filter" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.deploy">
+  <component name="RunManager" selected="Node.js.JobListingCard.jsx">
     <configuration name="JobListingCard.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/JobListingCard.jsx" working-dir="$PROJECT_DIR$/src">
-      <method v="2" />
-    </configuration>
-    <configuration name="TechnologiesList.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/TechnologiesList.jsx" working-dir="$PROJECT_DIR$/src">
       <method v="2" />
     </configuration>
     <configuration name="scratch_263.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$APPLICATION_CONFIG_DIR$/scratches/scratch_263.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
-    <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="deploy" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="predeploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="predeploy" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
+    <configuration name="technologiesList.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/technologiesList.jsx" working-dir="$PROJECT_DIR$/src">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.predeploy" />
-        <item itemvalue="npm.deploy" />
-        <item itemvalue="Node.js.TechnologiesList.jsx" />
-        <item itemvalue="Node.js.scratch_263.js" />
         <item itemvalue="Node.js.JobListingCard.jsx" />
+        <item itemvalue="Node.js.technologiesList.jsx" />
+        <item itemvalue="Node.js.scratch_263.js" />
       </list>
     </recent_temporary>
   </component>
@@ -131,7 +113,7 @@
       <workItem from="1711553913227" duration="3263000" />
       <workItem from="1711617895951" duration="1787000" />
       <workItem from="1711623491732" duration="4476000" />
-      <workItem from="1712928420937" duration="4201000" />
+      <workItem from="1712928420937" duration="3501000" />
     </task>
     <task id="LOCAL-00001" summary="technologiesList separated">
       <option name="closed" value="true" />
@@ -285,15 +267,7 @@
       <option name="project" value="LOCAL" />
       <updated>1712931855531</updated>
     </task>
-    <task id="LOCAL-00020" summary="CI/CD pipline finished">
-      <option name="closed" value="true" />
-      <created>1712932071234</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1712932071234</updated>
-    </task>
-    <option name="localTasksCounter" value="21" />
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,8 +302,7 @@
     <MESSAGE value="reverted branch" />
     <MESSAGE value="deploy2.yml init to reverted branch" />
     <MESSAGE value="test if tailwind works without purge= IT DOES NOT!" />
-    <MESSAGE value="CI/CD pipline finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="CI/CD pipline finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="test if tailwind works without purge= IT DOES NOT!" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

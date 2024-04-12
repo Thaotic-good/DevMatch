@@ -68,8 +68,7 @@ function JobListingCard() {
                             Choose your desired company, and let's see if we click!
                         </p>
                     </div>
-                    <ul
-                        className="grid gap-x-7 gap-y-12 sm:grid-cols-3 sm:gap-y-16 xl:col-span-2 xl:gap-y-0 items-center">
+                    <ul className="grid gap-x-7 gap-y-12 sm:grid-cols-3 sm:gap-y-16 xl:col-span-2 xl:gap-y-0 items-center">
                         {jobListings.map((position) =>
                             <li key={position.company}>
                                 <div className="flex items-center gap-x-4">

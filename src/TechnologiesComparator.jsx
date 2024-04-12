@@ -37,19 +37,17 @@ function TechnologiesComparator() {
         const matches = stack.filter(tech=> choice.includes(tech))
         /* if the current element passes the condition, it gets added to the new array*/
         setMatchingTech(matches)
-    }, [choice, stack]) /*stack is an external value and also is used, so must be declared as dependency*/
+    }, [choice, stack])
 
     useEffect(()=>{
         setPercentage(percentageMatch)
-    },[percentageMatch, setPercentage]) /*setter functions from useState or useContext do not need to be included
-    in dependency (React guarantees they are static = not change between renders), ESLint's rule is overly cautious*/
+    },[percentageMatch, setPercentage])
 
     useEffect(() => {
         const lengthRequiredTechs = choice.length
         const lengthMatch = matchingTech.length
         setPercentageMatch(()=> (lengthMatch / lengthRequiredTechs)*100)
-    }, [matchingTech, choice]); /*if a variable is used, it also has to be declared as a dependency*/
-    console.log(typeof Math.ceil(percentageMatch))
+    }, [matchingTech, choice]);
 
     return (
         <>
