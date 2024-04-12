@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="483bb95a-c194-4948-8f06-ef7f8cc0a988" name="Changes" comment="reverted branch">
+    <list default="true" id="483bb95a-c194-4948-8f06-ef7f8cc0a988" name="Changes" comment="deploy2.yml init to reverted branch">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JobListingCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/JobListingCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +108,7 @@
       <workItem from="1711553913227" duration="3263000" />
       <workItem from="1711617895951" duration="1787000" />
       <workItem from="1711623491732" duration="4476000" />
-      <workItem from="1712928420937" duration="1918000" />
+      <workItem from="1712928420937" duration="3115000" />
     </task>
     <task id="LOCAL-00001" summary="technologiesList separated">
       <option name="closed" value="true" />
@@ -242,7 +246,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712929685939</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="deploy2.yml init to reverted branch">
+      <option name="closed" value="true" />
+      <created>1712930452744</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1712930452744</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,7 +287,8 @@
     <MESSAGE value="matching of array of RequiredTechnologies and UsersStack, progress bar dynamic UI started but there are percentage math problems" />
     <MESSAGE value="initialization of EmailInput.jsx, created PercentageMatchContext.jsx," />
     <MESSAGE value="reverted branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="reverted branch" />
+    <MESSAGE value="deploy2.yml init to reverted branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="deploy2.yml init to reverted branch" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
