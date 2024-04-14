@@ -10,6 +10,7 @@
 import React, {useEffect, useState} from "react";
 import MakeItRun from "./img/makeItRunLogo.jpeg"
 import koala42 from "./img/Koala3.jpeg"
+import NFCtron from "./img/NFCtron-logo.png"
 import {useButtonsChoice} from "./ButtonsChoiceContext";
 import TechnologiesList from "./TechnologiesList";
 
@@ -27,10 +28,11 @@ const jobListings = [
         link: "https://www.startupjobs.cz/nabidka/48603/junior-frontend-developer-zlin-praha"
     },
     {
-        positionName: "Frontend Developer", company: "Cleevio",
-        requiredQualifications: ["React.js", "Next.js", "TypeScript", "CSS", "GraphQL", "Vue.js", "Svelte"],
-        logo: "https://www.jobstack.it/uploads/images/b4c3e380d256ec1882b7b80c943afdc5.png",
-        link: "https://www.jobstack.it/it-job/react-developer/60473552b3cf1"
+        positionName: "Frontend Developer", company: "NFCtron",
+        requiredQualifications: [["React.js", "Next.js", "Remix"], ["TypeScript", "JavaScript"], ["TailwindCSS", "MaterialUI"],
+            ["git", "GitHub"], "REST API"],
+        logo: NFCtron,
+        link: "https://www.nfctron.com/cs/kariera/junior-frontend-react-developer"
     },
 ]
 
