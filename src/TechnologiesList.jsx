@@ -35,6 +35,10 @@ const techs = [
     {id: 22, name: "Git", category:"tool" , type: ["frontend", "backend"]},
     {id: 23, name: "Next.js", category:"framework" , type: ["frontend", "backend"]},
     {id: 24, name: "Svelte", category:"framework" , type: ["frontend"]},
+    {id: 25, name: "Remix", category:"framework" , type: ["frontend"]},
+    {id: 26, name: "MaterialUI", category:"framework" , type: ["frontend"]},
+    {id: 27, name: "GitHub", category:"framework" , type: ["frontend"]},
+    {id: 28, name: "REST API", category:"framework" , type: ["frontend"]},
 ]
 
 function TechnologiesList() {
