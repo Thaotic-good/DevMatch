@@ -4,7 +4,7 @@
 * 7. !!! optional techs (either one of the choice ticked is considered as a match)
 */
 import {useUsersStackContext} from "./UsersStackContext";
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useMemo, useState} from "react";
 import {useButtonsChoice} from "./ButtonsChoiceContext";
 import {usePercentageMatch} from "./PercentageMatchContext";
 import EmailInput from "./EmailInput";
@@ -17,25 +17,51 @@ function TechnologiesComparator() {
     const [matchingTech, setMatchingTech] = useState([])
     const [percentageMatch, setPercentageMatch] = useState()
 
-    useEffect(() => {
-        const matches = stack.filter(tech=> choice.includes(tech))
-        /* if the current element passes the condition, it gets added to the new array*/
-        setMatchingTech(matches)
-    }, [choice, stack])
+    const matches = useMemo(() => {
+        return stack.filter(tech => {
+            return choice.some(req => {
+                if (Array.isArray(req)) {
+                    return req.includes(tech)
+                }
+                return tech === req;
+            })
+        })
+    }, [stack, choice])
 
-    useEffect(()=>{
+    console.log(stack) /*['JavaScript', 'Next.js', 'GitHub', 'REST API', 'MaterialUI']*/
+    console.log(choice) /*['React.js', 'TypeScript', 'TailwindCSS', 'Git', 'REST API']*/
+    console.log(typeof matches)
+
+    // const matches = stack.filter(tech => {
+    //     return choice.some(req => {
+    //         const isMatch = Array.isArray(req) ? req.includes(tech) : tech === req;
+    //         console.log(`Checking tech: ${tech} against req: ${req} - Match: ${isMatch}`);
+    //         return isMatch;
+    //     });
+    // });
+
+    // console.log(`Total Requirements: ${choice.length}`);
+    // console.log(`Matched Requirements: ${matches.length}`);
+    // console.log(`Match Percentage: ${(matches.length / choice.length) * 100}%`);
+
+
+    useEffect(() => {
+        setMatchingTech(matches)
+    }, [matches])
+
+    useEffect(() => {
         setPercentage(percentageMatch)
-    },[percentageMatch, setPercentage])
+    }, [percentageMatch])
 
     useEffect(() => {
         const lengthRequiredTechs = choice.length
         const lengthMatch = matchingTech.length
-        setPercentageMatch(()=> (lengthMatch / lengthRequiredTechs)*100)
+        setPercentageMatch(() => (lengthMatch / lengthRequiredTechs) * 100)
     }, [matchingTech, choice]);
 
     return (
         <>
-            {percentageMatch>=80? <EmailInput/> : <RejectionMessage/>}
+            {percentageMatch >= 80 ? <EmailInput/> : <RejectionMessage/>}
         </>
     )
 }

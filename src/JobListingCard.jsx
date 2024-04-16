@@ -4,12 +4,12 @@
 (or the card of job listings should appear after making the first DevChoice)
 (paste the job description, and DevMatch instantly highlights key tech requirements)
 2. user chooses the company with which he will compare his tech-stack
-3.the requiredQualifications of that becomes a state which gets passes to TechnologiesComparator
+3. the requiredQualifications of that becomes a state which gets passes to TechnologiesComparator
 */
 
 import React, {useEffect, useState} from "react";
 import MakeItRun from "./img/makeItRunLogo.jpeg"
-import koala42 from "./img/Koala3.jpeg"
+import koala42 from "./img/Koala3.png"
 import NFCtron from "./img/NFCtron-logo.png"
 import {useButtonsChoice} from "./ButtonsChoiceContext";
 import TechnologiesList from "./TechnologiesList";
@@ -30,7 +30,7 @@ const jobListings = [
     {
         positionName: "Frontend Developer", company: "NFCtron",
         requiredQualifications: [["React.js", "Next.js", "Remix"], ["TypeScript", "JavaScript"], ["TailwindCSS", "MaterialUI"],
-            ["git", "GitHub"], "REST API"],
+            ["Git", "GitHub"], "REST API"],
         logo: NFCtron,
         link: "https://www.nfctron.com/cs/kariera/junior-frontend-react-developer"
     },
@@ -42,8 +42,31 @@ function JobListingCard() {
     const [showList, setShowList] = useState(false)
     const [logoClicked, setLogoClicked] = useState(null)
 
+    const preprocessedRequirements = (requirements) => {
+        const interchangeableRequirements = {
+            "React.js": ["React.js", "Next.js", "Remix"],
+            "TypeScript": ["TypeScript", "JavaScript"],
+            "TailwindCSS": ["TailwindCSS", "MaterialUI"],
+            "Git": ["Git", "GitHub"]
+        }
+        return requirements.map(req => {
+            if (Array.isArray(req)) {
+                const key = Object.keys(interchangeableRequirements).find(key =>
+                    /*.find method iterates over each key obtained with .Object.keys method from
+                    interchangeableRequirements and applies a test function to each*/
+                    req.some(r => interchangeableRequirements[key].includes(r)))
+                /* inside the .find() method, there's a function that iterates over each technology `r` in `req` and is
+                checking if any `r` element is a value associated with any key in the interchangeableMapping object.*/
+                /*interchangeableMapping[key] is used to access the value associated with a key*/
+                return key || req[0]
+            }
+            return req
+        })
+    }
+
     const handleClick = (position) => {
-        setChosenCompaniesRequirements(position.requiredQualifications)
+        const normalizedRequirements = preprocessedRequirements(position.requiredQualifications)
+        setChosenCompaniesRequirements(normalizedRequirements)
         setShowList(true)
         if (logoClicked === position.company) {
             setLogoClicked(null)
@@ -56,6 +79,7 @@ function JobListingCard() {
         setChoice(chosenCompaniesRequirements)
     }, [chosenCompaniesRequirements, setChoice])
 
+    console.log(chosenCompaniesRequirements)
     return (
         <>
             <div className="flex content-center bg-white rounded-lg py-24 sm:py-26 md:px-8">
@@ -76,9 +100,9 @@ function JobListingCard() {
                                 <div className="flex items-center gap-x-4">
                                     <button type="submit">
                                         <div
-                                            className={`h-16 w-16 ${logoClicked === position.company ? "h-20 w-20" : "hover:h-20 hover:w-20"} transition-all duration-300`}>
+                                            className={`h-16 w-16  ${logoClicked === position.company ? "h-20 w-20" : "hover:h-20 hover:w-20"} transition-all duration-300`}>
                                             <img
-                                                className={`rounded-full ${logoClicked === position.company ? "ring-8 ring-blue-500" : ""}`}
+                                                className={`rounded-full ${logoClicked === position.company ? "ring-8 ring-blue-500" : "ring-2 ring-gray-300"}`}
                                                 src={position.logo}
                                                 alt=""
                                                 onClick={() => handleClick(position)}

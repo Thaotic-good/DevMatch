@@ -6,7 +6,7 @@
 5. submission button that will close technologiesList (conditional rendering)
 6. open the TechnologiesComparator.jsx
 * */
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {useUsersStackContext} from "./UsersStackContext";
 import TechnologiesComparator from "./TechnologiesComparator";
 
@@ -39,6 +39,7 @@ const techs = [
     {id: 26, name: "MaterialUI", category:"framework" , type: ["frontend"]},
     {id: 27, name: "GitHub", category:"framework" , type: ["frontend"]},
     {id: 28, name: "REST API", category:"framework" , type: ["frontend"]},
+    {id: 29, name: "TailwindCSS", category:"framework" , type: ["frontend"]},
 ]
 
 function TechnologiesList() {
@@ -66,16 +67,20 @@ function TechnologiesList() {
         setShowResult(true)
     }
 
+    // useEffect(() => {
+    //     console.log(usersStack)
+    // }, [showResult]);
+
     return (
         <>
             {showList &&
-            <form onSubmit={handleSubmit}>
-                <div className="p-4 max-w-screen-lg mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+            <form className=" xl:col-span-3 2xl:col-span-3" onSubmit={handleSubmit}>
+                <div className="p-4 max-w-full mx-auto bg-white rounded-lg shadow-md overflow-hidden">
                     <fieldset>
                         <div className="text-lg font-semibold text-gray-900 mb-4">Which tech tools are in your
                             tech-stack?
                         </div>
-                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
                             {techs.map((filteredTech) =>
                                 <label key={filteredTech.id} className="inline-flex items-center">
                                     <input name="tech-options" type="checkbox" onClick={() => handleClick(filteredTech)}
