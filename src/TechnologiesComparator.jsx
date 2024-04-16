@@ -51,7 +51,7 @@ function TechnologiesComparator() {
 
     useEffect(() => {
         setPercentage(percentageMatch)
-    }, [percentageMatch])
+    }, [percentageMatch, setPercentage])
 
     useEffect(() => {
         const lengthRequiredTechs = choice.length

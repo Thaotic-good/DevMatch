@@ -43,12 +43,7 @@ function JobListingCard() {
     const [logoClicked, setLogoClicked] = useState(null)
 
     const preprocessedRequirements = (requirements) => {
-        const interchangeableRequirements = {
-            "React.js": ["React.js", "Next.js", "Remix"],
-            "TypeScript": ["TypeScript", "JavaScript"],
-            "TailwindCSS": ["TailwindCSS", "MaterialUI"],
-            "Git": ["Git", "GitHub"]
-        }
+
         return requirements.map(req => {
             if (Array.isArray(req)) {
                 const key = Object.keys(interchangeableRequirements).find(key =>
