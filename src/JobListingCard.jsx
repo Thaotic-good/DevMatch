@@ -13,6 +13,7 @@ import koala42 from "./img/Koala3.png"
 import NFCtron from "./img/NFCtron-logo.png"
 import {useButtonsChoice} from "./ButtonsChoiceContext";
 import TechnologiesList from "./TechnologiesList";
+import {preprocessRequirements} from "./utilities"
 
 const jobListings = [
     {
@@ -38,43 +39,22 @@ const jobListings = [
 
 function JobListingCard() {
     const [chosenCompaniesRequirements, setChosenCompaniesRequirements] = useState([])
-    const {setChoice} = useButtonsChoice()
+    const {setChoice, setCompanyName} = useButtonsChoice()
     const [showList, setShowList] = useState(false)
     const [logoClicked, setLogoClicked] = useState(null)
 
-    const preprocessedRequirements = (requirements) => {
-
-        return requirements.map(req => {
-            if (Array.isArray(req)) {
-                const key = Object.keys(interchangeableRequirements).find(key =>
-                    /*.find method iterates over each key obtained with .Object.keys method from
-                    interchangeableRequirements and applies a test function to each*/
-                    req.some(r => interchangeableRequirements[key].includes(r)))
-                /* inside the .find() method, there's a function that iterates over each technology `r` in `req` and is
-                checking if any `r` element is a value associated with any key in the interchangeableMapping object.*/
-                /*interchangeableMapping[key] is used to access the value associated with a key*/
-                return key || req[0]
-            }
-            return req
-        })
-    }
-
     const handleClick = (position) => {
-        const normalizedRequirements = preprocessedRequirements(position.requiredQualifications)
+        setCompanyName(position.company)
+        const normalizedRequirements = preprocessRequirements(position.requiredQualifications)
         setChosenCompaniesRequirements(normalizedRequirements)
         setShowList(true)
-        if (logoClicked === position.company) {
-            setLogoClicked(null)
-        } else {
-            setLogoClicked(position.company)
-        }
+        setLogoClicked(logoClicked === position.company? null : position.company)
     }
 
     useEffect(() => {
         setChoice(chosenCompaniesRequirements)
     }, [chosenCompaniesRequirements, setChoice])
 
-    console.log(chosenCompaniesRequirements)
     return (
         <>
             <div className="flex content-center bg-white rounded-lg py-24 sm:py-26 md:px-8">

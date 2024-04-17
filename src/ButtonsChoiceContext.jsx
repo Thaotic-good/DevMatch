@@ -8,8 +8,9 @@ export function useButtonsChoice(){
 
 export function ButtonsChoiceProvider({children}){
     const [choice, setChoice]= useState(null)
+    const [companyName, setCompanyName] = useState(null)
     return (
-        <ButtonsChoiceContext.Provider value={{choice, setChoice}}>
+        <ButtonsChoiceContext.Provider value={{choice, setChoice, companyName, setCompanyName}}>
             {children}
         </ButtonsChoiceContext.Provider>
     );
