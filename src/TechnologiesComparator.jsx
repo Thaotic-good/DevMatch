@@ -32,7 +32,6 @@ function TechnologiesComparator() {
     // console.log("Original Stack: ", stack);
     // console.log("Normalized Stack: ", normalizedStack);
 
-
     useEffect(() => {
         setPercentage(percentageMatch)
     }, [percentageMatch, setPercentage])
