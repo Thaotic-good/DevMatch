@@ -5,8 +5,6 @@ import {PercentageMatchProvider} from "./PercentageMatchContext";
 import React from "react";
 import JobListingCard from "./JobListingCard";
 
-/*TASKS:
-* 1. */
 function App() {
   return (
     <div className="App">
